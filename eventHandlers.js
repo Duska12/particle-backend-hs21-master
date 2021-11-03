@@ -6,7 +6,7 @@ exports.registerEventHandlers = function (source) {
     source.addEventListener('MyEvent', handleMyEvent);
 
     // Register more event handlers here
-    source.addEventListener('Hantelbewegungen', handleMotionDetection);
+    source.addEventListener('motion-detected', handleMotionDetection);
 }
 
 function handleMotionDetection(event) {

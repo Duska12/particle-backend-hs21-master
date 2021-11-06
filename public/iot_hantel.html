@@ -11,9 +11,10 @@
     <h4>Events</h4>
     <!-- Events example -->
     <p>Last Event: <span id="lastevent"></span></p>
-    <p>Counter (Event): <span id="counterevent"></span></p>
 
-    <p>Motion detected: <span id="motionevent"></span></p>
+    <p>Trainingsstart: <span id="startevent"></span></p>
+    <p>Trainingsende: <span id="endevent"></span></p>
+    <p>Pulls Kadenz: <span id="pullsevent"></span></p>
 
     <hr>
     <h4>Variables</h4>
@@ -22,16 +23,9 @@
     <button onclick="getCounter()">Get counter</button>
     <br>
 
-    <p>Lamp status: <span id="lamp"></span></p>
-    <button onclick="getLampStatus()">Get lamp status</button>
+    <p>Pulls (Variable): <span id="pulls"></span></p>
+    <button onclick="getPulls()">Get Pulls count</button>
     <br>
-
-    <hr>
-    <h4>Functions</h4>
-    <!-- Call functions example  -->
-    <p>Set Counter</p>
-    <input type="number" id="counterinput" value="0">
-    <button onclick="setCounter()">Set counter</button>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="iot-hantel.js"></script>

@@ -17,12 +17,16 @@ initSSE();
 function updateVariables(data) {
     // update the html elements
     document.getElementById("lastevent").innerHTML = JSON.stringify(data);
-    if (data.eventName === "MyEvent") {
-        document.getElementById("counterevent").innerHTML = data.eventData;
+    if (data.eventName === "Trainingsstart") {
+        document.getElementById("startevent").innerHTML = data.eventData;
     }
-    if (data.eventName === "motion-detected") {
-        document.getElementById("motionevent").innerHTML = data.eventData;
+    if (data.eventName === "Trainingsende") {
+        document.getElementById("endevent").innerHTML = data.eventData;
     }
+
+    if (data.eventName === "Pulls Kadenz") {
+    document.getElementById("pullsevent").innerHTML = data.eventData;
+}
 }
 
 async function setCounter() {
@@ -36,20 +40,11 @@ async function setCounter() {
     alert("Response: " + response.data.result); // we could to something meaningful with the return value here ... 
 }
 
-async function getCounter() {
+async function getPulls() {
     // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/counter");
-    var counter = response.data.result;
+    var response = await axios.get(rootUrl + "/api/device/0/variable/pulls");
+    var pulls = response.data.result;
 
     // update the html element
-    document.getElementById("counter").innerHTML = counter;
-}
-
-async function getLampStatus() {
-    // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/lamp");
-    var counter = response.data.result;
-
-    // update the html element
-    document.getElementById("lamp").innerHTML = counter;
+    document.getElementById("pulls").innerHTML = pulls;
 }
